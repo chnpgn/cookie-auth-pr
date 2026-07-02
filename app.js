@@ -45,6 +45,24 @@ function authenticate(req, res, next) {
   next();
 }
 
+function authorize(role) {
+  return (req, res, next) => {
+    if (req.user.role !== role) {
+      return res.status(403).json({
+        message: "Forbidden",
+      });
+    }
+
+    next();
+  };
+}
+
+app.get("/admin", authenticate, authorize("admin"), (req, res) => {
+  res.json({
+    message: "Admin area",
+  });
+});
+
 app.get("/profile", authenticate, (req, res) => {
   res.json(req.user);
 });
