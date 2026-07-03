@@ -14,12 +14,13 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "type": "commonjs",
+  "type": "module",
   "bugs": {
     "url": "https://github.com/chnpgn/cookie-auth-pr/issues"
   },
   "homepage": "https://github.com/chnpgn/cookie-auth-pr#readme",
   "devDependencies": {
+    "eslint": "^10.6.0",
     "nodemon": "^3.1.14"
   },
   "dependencies": {
